@@ -1,42 +1,74 @@
-# Lab 3: Dice Roller app
+<div align="center">
 
-Xây dựng ứng dụng **tung xúc xắc (Dice Roller)** bằng Jetpack Compose — bấm nút Roll để đổ ngẫu nhiên từ 1 đến 6 và hiển thị hình xúc xắc tương ứng.
+# Dice Roller
+
+**Lab 3 · Android với Jetpack Compose**
+
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com)
+
+</div>
+
+---
+
+> Ứng dụng **tung xúc xắc (Dice Roller)** — bấm nút Roll để đổ ngẫu nhiên 1–6, hiển thị hình xúc xắc tương ứng và làm quen với **quản lý trạng thái (state)**.
+
+---
 
 ## Video demo
 
 <video src="video/VIDEO_LAB_3.webm" controls preload="metadata" playsinline width="100%"></video>
 
-## Tính năng
+## Ảnh minh họa
 
-- Nút `Roll` tung xúc xắc ngẫu nhiên (1..6)
-- Hiển thị hình ảnh xúc xắc tương ứng với kết quả
-- Hiển thị thông báo (trúng số may mắn / lời động viên)
-- Cập nhật giao diện ngay khi state thay đổi (recomposition)
+<div align="center">
+  <img src="video/lab3_1.jpg" alt="Lab 3 - Dice Roller" width="300">
+</div>
+
+## Tính năng nổi bật
+
+| Tính năng | Mô tả |
+|-----------|--------|
+| Nút `Roll` | Tung xúc xắc ngẫu nhiên trong khoảng 1–6 |
+| Hình xúc xắc | Ảnh PNG tương ứng với kết quả đổ được |
+| Thông báo thông minh | Chúc mừng khi trúng số may mắn, động viên khi chưa |
+| Cập nhật tức thì | Giao diện tự vẽ lại khi state thay đổi (recomposition) |
 
 ## Kiến thức áp dụng
 
-- State management: `remember` + `mutableIntStateOf`
-- Xử lý sự kiện nhấn nút: `Button(onClick = { ... })`
-- Biểu thức `when` để chọn hình ảnh / thông báo theo kết quả
-- Composable stateful (`DiceRollerApp`) và stateless (`Image`, `Text`)
+| Khái niệm | Cách dùng |
+|-----------|-----------|
+| State management | `remember` + `mutableIntStateOf` |
+| Xử lý sự kiện | `Button(onClick = { ... })` |
+| Biểu thức `when` | Chọn hình ảnh / thông báo theo kết quả |
+| Stateful vs Stateless | `DiceRollerApp` giữ state, con hiển thị nhận dữ liệu |
 
 ## Chạy dự án
 
 ```bash
 cd "Lab 3. Dice Roller app"
-./gradlew assembleDebug      # Build
-./gradlew installDebug       # Cài lên thiết bị (qua adb)
+./gradlew assembleDebug      # Build APK
+./gradlew installDebug       # Cài lên thiết bị qua adb
 ```
 
 ## Mô phỏng console (console-simulation)
 
-Kèm theo bộ bài mô phỏng trên console minh họa các khái niệm của Unit 2:
+Kèm bộ bài mô phỏng trên console minh họa các khái niệm Unit 2:
 
-- `Bai1_DiceRoller.kt` — Dice Roller App
-- `Bai2_DebuggerAndState.kt` — Debugger & State Recomposition
-- `Bai3_LemonadePractice.kt` — Lemonade App Practice
-- `Bai4_ClickBehaviorPractice.kt` — Click Behavior Practice (State hoisting, Toggle)
+| File | Nội dung |
+|------|----------|
+| `Bai1_DiceRoller.kt` | Dice Roller App |
+| `Bai2_DebuggerAndState.kt` | Debugger & State Recomposition |
+| `Bai3_LemonadePractice.kt` | Lemonade App Practice |
+| `Bai4_ClickBehaviorPractice.kt` | Click Behavior Practice (State hoisting, Toggle) |
 
-Xem hướng dẫn chi tiết: [`console-simulation/RUN_LAB2.md`](Lab%203.%20Dice%20Roller%20app/console-simulation/RUN_LAB2.md)
+Hướng dẫn: [`console-simulation/RUN_LAB2.md`](Lab%203.%20Dice%20Roller%20app/console-simulation/RUN_LAB2.md)
 
-Mã nguồn chính: [`src/main/java/vku/ltm/diceroller/MainActivity.kt`](Lab%203.%20Dice%20Roller%20app/src/main/java/vku/ltm/diceroller/MainActivity.kt)
+**Mã nguồn chính:** [`src/main/java/vku/ltm/diceroller/MainActivity.kt`](Lab%203.%20Dice%20Roller%20app/src/main/java/vku/ltm/diceroller/MainActivity.kt)
+
+<div align="center">
+
+[← Lab 2 · Business Card](README_LAB_2.md) · [Về trang chủ](README.md) · [Lab 4 · Tip Calculator →](README_LAB_4.md)
+
+</div>
