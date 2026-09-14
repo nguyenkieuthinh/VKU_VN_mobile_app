@@ -4,9 +4,7 @@ Xây dựng ứng dụng **tính tiền boa (Tip Time)** bằng Jetpack Compose 
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_4.webm" controls width="100%"></video>
-
-Tải về: [VIDEO_LAB_4.webm](video/VIDEO_LAB_4.webm)
+<video src="video/VIDEO_LAB_4.webm" controls preload="metadata" playsinline width="100%"></video>
 
 ## Tính năng
 

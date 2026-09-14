@@ -4,9 +4,7 @@ Xây dựng ứng dụng **danh thiếp (Business Card)** bằng Jetpack Compose
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_2.webm" controls width="100%"></video>
-
-Tải về: [VIDEO_LAB_2.webm](video/VIDEO_LAB_2.webm)
+<video src="video/VIDEO_LAB_2.webm" controls preload="metadata" playsinline width="100%"></video>
 
 ## Tính năng
 

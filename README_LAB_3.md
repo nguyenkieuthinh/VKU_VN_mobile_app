@@ -4,9 +4,7 @@ Xây dựng ứng dụng **tung xúc xắc (Dice Roller)** bằng Jetpack Compos
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_3.webm" controls width="100%"></video>
-
-Tải về: [VIDEO_LAB_3.webm](video/VIDEO_LAB_3.webm)
+<video src="video/VIDEO_LAB_3.webm" controls preload="metadata" playsinline width="100%"></video>
 
 ## Tính năng
 

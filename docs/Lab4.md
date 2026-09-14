@@ -4,9 +4,7 @@ Nguồn: [Giới thiệu về trạng thái trong Compose](https://developer.and
 
 ## Video demo
 
-<video src="../video/VIDEO_LAB_4.webm" controls width="100%"></video>
-
-Tải về: [VIDEO_LAB_4.webm](../video/VIDEO_LAB_4.webm)
+<video src="../video/VIDEO_LAB_4.webm" controls preload="metadata" playsinline width="100%"></video>
 
 ## Mục tiêu
 
