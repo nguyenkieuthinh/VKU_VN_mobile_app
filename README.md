@@ -26,15 +26,15 @@
 
 ### Lab 2 · Business Card
 
-<video src="video/VIDEO_LAB_2.webm" controls preload="metadata" playsinline width="100%"></video>
+<video src="video/VIDEO_LAB_2.mp4" controls preload="metadata" playsinline width="100%"></video>
 
 ### Lab 3 · Dice Roller
 
-<video src="video/VIDEO_LAB_3.webm" controls preload="metadata" playsinline width="100%"></video>
+<video src="video/VIDEO_LAB_3.mp4" controls preload="metadata" playsinline width="100%"></video>
 
 ### Lab 4 · Tip Calculator
 
-<video src="video/VIDEO_LAB_4.webm" controls preload="metadata" playsinline width="100%"></video>
+<video src="video/VIDEO_LAB_4.mp4" controls preload="metadata" playsinline width="100%"></video>
 
 ## Ảnh minh họa
 
