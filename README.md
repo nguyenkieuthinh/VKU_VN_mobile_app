@@ -35,6 +35,9 @@
 ### Lab 4 · Tip Calculator
 
 <video src="https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d" controls width="100%"></video>
+### Lab 5 . Woof
+
+<video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
 
 ## Ảnh minh họa
 
