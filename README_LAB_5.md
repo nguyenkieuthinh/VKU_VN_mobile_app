@@ -19,7 +19,7 @@
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_5.webm" controls width="100%"></video>
+<video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
 
 ## Ảnh minh họa
 
