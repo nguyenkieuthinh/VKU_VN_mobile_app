@@ -18,9 +18,7 @@
 
 ## Video demo
 
-<video controls width="100%">
-  <source src="./video/VIDEO_LAB_2.webm" type="video/webm">
-</video>
+<video src="https://github.com/user-attachments/assets/b9ac1e9a-b44b-49f4-92cc-eb7eca6780f7" controls width="100%"></video>
 
 ## Ảnh minh họa
 
