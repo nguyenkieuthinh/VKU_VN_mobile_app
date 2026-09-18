@@ -18,7 +18,9 @@
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_2.webm" controls preload="metadata" playsinline width="100%"></video>
+<video controls width="100%">
+  <source src="./video/VIDEO_LAB_2.webm" type="video/webm">
+</video>
 
 ## Ảnh minh họa
 
