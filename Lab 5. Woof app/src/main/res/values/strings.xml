@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Woof</string>
+
+    <string name="dog_name_1">Bella</string>
+    <string name="dog_name_2">Rocky</string>
+    <string name="dog_name_3">Tinkerbell</string>
+    <string name="dog_name_4">Fido</string>
+    <string name="dog_name_5">Lulu</string>
+    <string name="dog_name_6">Rex</string>
+
+    <string name="dog_hobbies_1">Loves playing fetch and belly rubs</string>
+    <string name="dog_hobbies_2">Enjoys long walks and tasty treats</string>
+    <string name="dog_hobbies_3">Chases squirrels and naps in the sun</string>
+    <string name="dog_hobbies_4">Loyal friend who loves to swim</string>
+    <string name="dog_hobbies_5">Cuddly lap dog and expert napper</string>
+    <string name="dog_hobbies_6">Energetic pup who loves to dig</string>
+
+    <string name="years_old">%1$d years old</string>
+</resources>
