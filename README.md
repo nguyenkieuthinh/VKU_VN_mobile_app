@@ -26,11 +26,11 @@
 
 ### Lab 2 · Business Card
 
-<video src="video/VIDEO_LAB_2.mp4" controls preload="metadata" playsinline width="100%"></video>
+<video src="https://github.com/user-attachments/assets/b9ac1e9a-b44b-49f4-92cc-eb7eca6780f7" controls width="100%"></video>
 
 ### Lab 3 · Dice Roller
 
-<video src="video/VIDEO_LAB_3.mp4" controls preload="metadata" playsinline width="100%"></video>
+<video src="https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906" controls width="100%"></video>
 
 ### Lab 4 · Tip Calculator
 
