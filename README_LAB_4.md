@@ -60,6 +60,6 @@ cd "Lab 4. Tip Calculator app"
 
 <div align="center">
 
-[← Lab 3 · Dice Roller](README_LAB_3.md) · [Về trang chủ](README.md)
+[← Lab 3 · Dice Roller](README_LAB_3.md) · [Về trang chủ](README.md) · [Lab 5 · Woof →](README_LAB_5.md)
 
 </div>
