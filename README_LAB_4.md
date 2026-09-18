@@ -18,7 +18,7 @@
 
 ## Video demo
 
-<video src="video/VIDEO_LAB_4.mp4" controls preload="metadata" playsinline width="100%"></video>
+<video src="https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d" controls width="100%"></video>
 
 ## Ảnh minh họa
 
