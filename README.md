@@ -40,12 +40,14 @@
 ### Lab 5 · Woof
 
 <video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
+### Lab 6 . Cupcake
+<video src="https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa" controls width="100%"></video>
 
 ## Ảnh minh họa
 
 <div align="center">
 
-| Lab 2 · Business Card | Lab 3 · Dice Roller | Lab 4 · Tip Calculator | Lab 5 · Woof |
+| Lab 2 · Business Card | Lab 3 · Dice Roller | Lab 4 · Tip Calculator | Lab 5 · Woof | Lab 6 . Cupcake |
 |:---------------------:|:-------------------:|:----------------------:|:------------:|
 | <img src="video/lab2_1.jpg" alt="Business Card" width="240"> | <img src="video/lab3_1.jpg" alt="Dice Roller" width="240"> | <img src="video/lab4_1.jpg" alt="Tip Calculator" width="240"> | <img src="video/lab5_1.png" alt="Woof" width="240"> |
 
