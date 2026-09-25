@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 4 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng và Material Theming.
+> Tổng hợp 5 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming và điều hướng đa màn hình.
 
 ## Danh sách bài thực hành
 
@@ -22,6 +22,7 @@
 | 3 | Dice Roller | State & sự kiện: `remember`, `mutableIntStateOf`, `Button` | [Xem chi tiết](README_LAB_3.md) |
 | 4 | Tip Calculator | State hoisting, `TextField`, `Switch`, tính toán | [Xem chi tiết](README_LAB_4.md) |
 | 5 | Woof | Material 3 Theming: Color Scheme, Typography, Shape, Dark Theme | [Xem chi tiết](README_LAB_5.md) |
+| 6 | Cupcake | Navigation Compose, ViewModel, StateFlow, đặt hàng | [Xem chi tiết](README_LAB_6.md) |
 
 ## Video demo
 
@@ -54,6 +55,6 @@
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md)**
 
 </div>
