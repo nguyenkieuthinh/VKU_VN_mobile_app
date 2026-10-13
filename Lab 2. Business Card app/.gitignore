@@ -4,3 +4,6 @@ build/
 .idea/
 *.iml
 .DS_Store
+
+# Local SDK path (machine-specific)
+local.properties

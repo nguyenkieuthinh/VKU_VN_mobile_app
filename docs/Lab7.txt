@@ -1,0 +1,317 @@
+=== HUONG DAN: CRUD Firestore + Jetpack Compose (Kotlin, Material3) ===
+Muc dich: AI doc de tao lai project. Entity: Course. Collection Firestore: "Courses".
+Package mau: com.example.firebaseproject (doi theo project). Theme: FirebaseprojectTheme.
+Man hinh: MainActivity (Them) -> CourseDetailsActivity (Danh sach) -> UpdateCourse (Sua/Xoa).
+(Goc docx chi co Them/Xem/Sua. Xoa = phan BO SUNG o buoc 8.)
+
+--- B1. Tao project ---
+Android Studio > Empty Activity (Compose). Package: com.example.firebaseproject
+
+--- B2. Ket noi Firebase ---
+Tools > Firebase > Cloud Firestore > connect (hoac tu console: them app, tai google-services.json vao app/).
+Firebase Console > Firestore Database > Create (test mode) > tab Rules, sua:
+  rules_version = '2';
+  service cloud.firestore { match /databases/{database}/documents { match /{document=**} { allow read, write: if true; } } }
+> Publish. (Chi dung de hoc/test, khong dung production.)
+Can plugin google-services:
+  project build.gradle.kts: id("com.google.gms.google-services") version "4.4.1" apply false
+  app build.gradle.kts plugins: id("com.google.gms.google-services")
+
+--- B3. AndroidManifest.xml ---
+Trong <manifest>, truoc <application>:
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+Trong <application> dang ky them 2 activity (MainActivity da co, exported=true):
+  <activity android:name=".CourseDetailsActivity" android:exported="false" />
+  <activity android:name=".UpdateCourse" android:exported="false" />
+
+--- B4. app/build.gradle.kts dependencies (them vao) ---
+  implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+  implementation("com.google.firebase:firebase-firestore")   // goc: libs.firebase.firestore
+  implementation(libs.androidx.material3)                    // + compose bom, ui, activity-compose nhu template
+(Dung thuan Material3, khong can androidx.compose.material.)
+
+--- B5. Color: ui/theme/Color.kt ---
+  val greenColor = Color(0xFF0F9D58)
+
+--- B6. Model: Course.kt ---
+import com.google.firebase.firestore.Exclude
+data class Course(
+    @Exclude var courseID: String? = "",   // @Exclude: khong luu vao field, lay tu document id
+    var courseName: String? = "",
+    var courseDuration: String? = "",
+    var courseDescription: String? = ""
+)
+// Firestore bat buoc: gia tri mac dinh cho moi field (constructor rong).
+
+--- B7. Common.kt (dung chung, tiet kiem code lap) ---
+package com.example.firebaseproject
+import android.widget.Toast
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.*
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.example.firebaseproject.ui.theme.greenColor
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppScaffold(title: String, content: @Composable (PaddingValues) -> Unit) = Scaffold(
+    topBar = {
+        TopAppBar(
+            title = { Text(title, Modifier.fillMaxWidth(), color = Color.White, textAlign = TextAlign.Center) },
+            colors = TopAppBarDefaults.topAppBarColors(containerColor = greenColor)
+        )
+    },
+    content = content
+)
+
+// Form 3 o nhap + nut submit. Dung cho ca THEM va SUA (khac nhau o init, btnText, onSubmit).
+// extra: slot them nut phu (vd nut Xoa) ben duoi.
+@Composable
+fun CourseForm(
+    pad: PaddingValues, init: Course, btnText: String,
+    extra: @Composable ColumnScope.() -> Unit = {},
+    onSubmit: (Course) -> Unit
+) {
+    val ctx = LocalContext.current
+    var name by remember { mutableStateOf(init.courseName ?: "") }
+    var dur by remember { mutableStateOf(init.courseDuration ?: "") }
+    var desc by remember { mutableStateOf(init.courseDescription ?: "") }
+
+    @Composable
+    fun Field(v: String, hint: String, set: (String) -> Unit) = TextField(
+        value = v, onValueChange = set, placeholder = { Text(hint) },
+        singleLine = true, modifier = Modifier.padding(16.dp).fillMaxWidth()
+    )
+
+    Column(
+        Modifier.fillMaxSize().padding(pad),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Field(name, "Enter your course name") { name = it }
+        Field(dur, "Enter your course duration") { dur = it }
+        Field(desc, "Enter your course description") { desc = it }
+        Button(
+            onClick = {
+                when {
+                    name.isBlank() -> Toast.makeText(ctx, "Please enter course name", Toast.LENGTH_SHORT).show()
+                    dur.isBlank() -> Toast.makeText(ctx, "Please enter course duration", Toast.LENGTH_SHORT).show()
+                    desc.isBlank() -> Toast.makeText(ctx, "Please enter course description", Toast.LENGTH_SHORT).show()
+                    else -> onSubmit(Course(init.courseID, name, dur, desc))
+                }
+            },
+            modifier = Modifier.fillMaxWidth().padding(16.dp)
+        ) { Text(btnText, Modifier.padding(8.dp)) }
+        extra()
+    }
+}
+
+--- B8a. THEM: MainActivity.kt ---
+package com.example.firebaseproject
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
+import com.example.firebaseproject.ui.theme.FirebaseprojectTheme
+import com.google.firebase.firestore.FirebaseFirestore
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            FirebaseprojectTheme {
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    AppScaffold("Them du lieu") { pad ->
+                        val ctx = LocalContext.current
+                        CourseForm(
+                            pad, Course(), "Add Data",
+                            extra = {   // nut sang man hinh danh sach
+                                Button(
+                                    onClick = { ctx.startActivity(Intent(ctx, CourseDetailsActivity::class.java)) },
+                                    modifier = Modifier.fillMaxWidth().padding(16.dp)
+                                ) { Text("View Courses", Modifier.padding(8.dp)) }
+                            }
+                        ) { addDataToFirebase(it, ctx) }
+                    }
+                }
+            }
+        }
+    }
+}
+
+fun addDataToFirebase(course: Course, context: Context) {
+    FirebaseFirestore.getInstance().collection("Courses")
+        .add(course)   // id tu sinh; muon id rieng: .document(id).set(course)
+        .addOnSuccessListener { Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show() }
+        .addOnFailureListener { Toast.makeText(context, "Fail to add: $it", Toast.LENGTH_SHORT).show() }
+}
+
+--- B9. DANH SACH: CourseDetailsActivity.kt ---
+package com.example.firebaseproject
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.firebaseproject.ui.theme.FirebaseprojectTheme
+import com.example.firebaseproject.ui.theme.greenColor
+import com.google.firebase.firestore.FirebaseFirestore
+
+class CourseDetailsActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            FirebaseprojectTheme {
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    AppScaffold("Danh sach khoa hoc") { pad ->
+                        val courses = remember { mutableStateListOf<Course>() }
+                        // Doc 1 lan khi vao man hinh (khong doc trong body composable -> bi lap moi recompose)
+                        LaunchedEffect(Unit) {
+                            FirebaseFirestore.getInstance().collection("Courses").get()
+                                .addOnSuccessListener { snap ->
+                                    if (snap.isEmpty) Toast.makeText(this@CourseDetailsActivity, "No data found", Toast.LENGTH_SHORT).show()
+                                    courses.clear()
+                                    snap.documents.forEach { d ->
+                                        d.toObject(Course::class.java)?.let { it.courseID = d.id; courses.add(it) }
+                                    }
+                                }
+                                .addOnFailureListener { Toast.makeText(this@CourseDetailsActivity, "Fail to get data", Toast.LENGTH_SHORT).show() }
+                        }
+                        CourseList(courses, pad)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CourseList(courses: List<Course>, pad: PaddingValues) {
+    val ctx = LocalContext.current
+    LazyColumn(Modifier.fillMaxSize().padding(pad)) {
+        items(courses) { c ->
+            Card(
+                onClick = {  // bam vao item -> sang man hinh Sua, truyen du lieu qua Intent extra
+                    ctx.startActivity(Intent(ctx, UpdateCourse::class.java).apply {
+                        putExtra("courseID", c.courseID)
+                        putExtra("courseName", c.courseName)
+                        putExtra("courseDuration", c.courseDuration)
+                        putExtra("courseDescription", c.courseDescription)
+                    })
+                },
+                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                elevation = CardDefaults.cardElevation(6.dp)
+            ) {
+                Column(Modifier.padding(8.dp).fillMaxWidth()) {
+                    Text(c.courseName ?: "", Modifier.padding(4.dp), color = greenColor,
+                        style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold))
+                    Text(c.courseDuration ?: "", Modifier.padding(4.dp), color = Color.Black, fontSize = 15.sp)
+                    Text(c.courseDescription ?: "", Modifier.padding(4.dp), color = Color.Black, fontSize = 15.sp)
+                }
+            }
+        }
+    }
+}
+
+--- B10. SUA (+ XOA): UpdateCourse.kt ---
+package com.example.firebaseproject
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
+import com.example.firebaseproject.ui.theme.FirebaseprojectTheme
+import com.google.firebase.firestore.FirebaseFirestore
+
+class UpdateCourse : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Nhan du lieu tu Intent
+        val init = Course(
+            intent.getStringExtra("courseID"), intent.getStringExtra("courseName"),
+            intent.getStringExtra("courseDuration"), intent.getStringExtra("courseDescription")
+        )
+        setContent {
+            FirebaseprojectTheme {
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    AppScaffold("Cap nhat du lieu") { pad ->
+                        val ctx = LocalContext.current
+                        CourseForm(
+                            pad, init, "Update Data",
+                            extra = {   // === XOA (bo sung) ===
+                                Button(
+                                    onClick = { deleteCourse(init.courseID, ctx) },
+                                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
+                                    modifier = Modifier.fillMaxWidth().padding(16.dp)
+                                ) { Text("Delete Data", Modifier.padding(8.dp)) }
+                            }
+                        ) { updateDataToFirebase(it, ctx) }
+                    }
+                }
+            }
+        }
+    }
+}
+
+private fun backToList(ctx: Context) {
+    // CLEAR_TOP: quay lai danh sach cu, tranh chong nhieu man hinh. Muon list tu tai lai: them FLAG_ACTIVITY_NEW_TASK + finish() o noi goi.
+    ctx.startActivity(Intent(ctx, CourseDetailsActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
+}
+
+fun updateDataToFirebase(course: Course, ctx: Context) {
+    FirebaseFirestore.getInstance().collection("Courses")
+        .document(course.courseID.toString()).set(course)   // set = ghi de toan bo doc; sua 1 phan: .update("courseName", v)
+        .addOnSuccessListener { Toast.makeText(ctx, "Course Updated", Toast.LENGTH_SHORT).show(); (ctx as? ComponentActivity)?.finish(); backToList(ctx) }
+        .addOnFailureListener { Toast.makeText(ctx, "Fail to update: ${it.message}", Toast.LENGTH_SHORT).show() }
+}
+
+fun deleteCourse(id: String?, ctx: Context) {
+    if (id.isNullOrEmpty()) return
+    FirebaseFirestore.getInstance().collection("Courses").document(id).delete()
+        .addOnSuccessListener { Toast.makeText(ctx, "Course Deleted", Toast.LENGTH_SHORT).show(); (ctx as? ComponentActivity)?.finish(); backToList(ctx) }
+        .addOnFailureListener { Toast.makeText(ctx, "Fail to delete: ${it.message}", Toast.LENGTH_SHORT).show() }
+}
+
+--- LUU Y / LOI THUONG GAP ---
+1. Thieu internet permission hoac chua Publish Rules -> add/get that bai (PERMISSION_DENIED).
+2. Thieu google-services.json hoac plugin google-services -> crash khi getInstance().
+3. Activity chua khai bao trong Manifest -> ActivityNotFoundException.
+4. Data class Course phai co default value moi field (Firestore toObject).
+5. courseID dung @Exclude; luon gan lai bang d.id sau toObject() de sua/xoa dung doc.
+6. Danh sach chi tai khi vao man hinh; sau Sua/Xoa phai mo lai/ quay ve CourseDetailsActivity de thay thay doi
+   (muon realtime: thay .get() bang .addSnapshotListener { snap, e -> ... } trong LaunchedEffect/DisposableEffect).
+7. Pattern chung: CourseForm (them/sua) + AppScaffold dung lai; doi entity -> sua Course + cac Field.
+
+--- FLOW ---
+Main(Add) --"View Courses"--> CourseDetails(list, get) --click item + Intent extras--> UpdateCourse(set / delete) --> CourseDetails

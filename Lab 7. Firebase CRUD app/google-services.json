@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289826236022",
+    "project_id": "vku-laptrinhdidong",
+    "storage_bucket": "vku-laptrinhdidong.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289826236022:android:0f226a4b5a3d71ff1c2157",
+        "android_client_info": {
+          "package_name": "com.example.firebaseproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxqt-I344uNyMEjc0iCQABwHWaDQcHi24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
