@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 5 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming và điều hướng đa màn hình.
+> Tổng hợp 6 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình và lưu trữ dữ liệu trực tuyến với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -23,6 +23,7 @@
 | 4 | Tip Calculator | State hoisting, `TextField`, `Switch`, tính toán | [Xem chi tiết](README_LAB_4.md) |
 | 5 | Woof | Material 3 Theming: Color Scheme, Typography, Shape, Dark Theme | [Xem chi tiết](README_LAB_5.md) |
 | 6 | Cupcake | Navigation Compose, ViewModel, StateFlow, đặt hàng | [Xem chi tiết](README_LAB_6.md) |
+| 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
 
 ## Video demo
 
@@ -37,19 +38,34 @@
 ### Lab 4 · Tip Calculator
 
 <video src="https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d" controls width="100%"></video>
+
 ### Lab 5 · Woof
 
 <video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
-### Lab 6 . Cupcake
+
+### Lab 6 · Cupcake
+
 <video src="https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa" controls width="100%"></video>
+
+### Lab 7 · Firebase CRUD
+
+<!-- Dán link video demo Lab 7 vào đây, cùng dạng với các lab trên:
+<video src="LINK_VIDEO_DEMO" controls width="100%"></video>
+-->
+
+> *Video demo sẽ được cập nhật.*
 
 ## Ảnh minh họa
 
 <div align="center">
 
-| Lab 2 · Business Card | Lab 3 · Dice Roller | Lab 4 · Tip Calculator | Lab 5 · Woof | Lab 6 . Cupcake |
-|:---------------------:|:-------------------:|:----------------------:|:------------:|
-| <img src="video/lab2_1.jpg" alt="Business Card" width="240"> | <img src="video/lab3_1.jpg" alt="Dice Roller" width="240"> | <img src="video/lab4_1.jpg" alt="Tip Calculator" width="240"> | <img src="video/lab5_1.png" alt="Woof" width="240"> |
+| Lab 2 · Business Card | Lab 3 · Dice Roller | Lab 4 · Tip Calculator |
+|:---------------------:|:-------------------:|:----------------------:|
+| <img src="video/lab2_1.jpg" alt="Business Card" width="240"> | <img src="video/lab3_1.jpg" alt="Dice Roller" width="240"> | <img src="video/lab4_1.jpg" alt="Tip Calculator" width="240"> |
+
+| Lab 5 · Woof | Lab 6 · Cupcake | Lab 7 · Firebase CRUD |
+|:------------:|:---------------:|:---------------------:|
+| <img src="video/lab5_1.png" alt="Woof" width="240"> | <img src="video/lab6_1.png" alt="Cupcake" width="240"> | <img src="video/lab7_1.png" alt="Firebase CRUD" width="240"> |
 
 </div>
 
@@ -57,6 +73,6 @@
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md)**
 
 </div>

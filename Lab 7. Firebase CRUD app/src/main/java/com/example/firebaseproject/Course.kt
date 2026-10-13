@@ -8,7 +8,12 @@ import com.google.firebase.firestore.Exclude
 data class Course(
         // @Exclude: courseID KHONG duoc luu thanh field trong document.
         // ID that cua document duoc gan lai bang d.id sau khi toObject().
-        @Exclude var courseID: String? = "",
+        //
+        // BAT BUOC phai co ca @get: va @field: (khong viet tran @Exclude).
+        // Kotlin mac dinh chi gan annotation len FIELD, nhung Firestore quet
+        // GETTER truoc: getCourseID() khong co annotation -> property van duoc
+        // them vao danh sach va bi ghi xuong Firestore. Phai chan ca 2 dau.
+        @get:Exclude @field:Exclude var courseID: String? = "",
         var courseName: String? = "",
         var courseDuration: String? = "",
         var courseDescription: String? = ""

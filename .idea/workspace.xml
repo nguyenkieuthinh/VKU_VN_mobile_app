@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414ca7e5-600f-42a6-b37e-fe45d4769eb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/Lab7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2. Business Card app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2. Business Card app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 3. Dice Roller app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3. Dice Roller app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 4. Tip Calculator app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 4. Tip Calculator app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 7. Firebase CRUD app/src/main/java/com/example/firebaseproject/Course.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 7. Firebase CRUD app/src/main/java/com/example/firebaseproject/Course.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
