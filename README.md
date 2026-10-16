@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 6 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình và lưu trữ dữ liệu trực tuyến với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
+> Tổng hợp 7 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình, lưu trữ dữ liệu trực tuyến và xác thực người dùng với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -24,6 +24,7 @@
 | 5 | Woof | Material 3 Theming: Color Scheme, Typography, Shape, Dark Theme | [Xem chi tiết](README_LAB_5.md) |
 | 6 | Cupcake | Navigation Compose, ViewModel, StateFlow, đặt hàng | [Xem chi tiết](README_LAB_6.md) |
 | 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
+| 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
 
 ## Video demo
 
@@ -55,6 +56,10 @@
 
 > *Video demo sẽ được cập nhật.*
 
+### Lab 8 · Pizzeria
+
+<video src="https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16" controls width="100%"></video>
+
 ## Ảnh minh họa
 
 <div align="center">
@@ -67,12 +72,16 @@
 |:------------:|:---------------:|:---------------------:|
 | <img src="video/lab5_1.png" alt="Woof" width="240"> | <img src="video/lab6_1.png" alt="Cupcake" width="240"> | <img src="video/lab7_1.png" alt="Firebase CRUD" width="240"> |
 
+| Lab 8 · Pizzeria |
+|:----------------:|
+| <img src="video/lab8_1.png" alt="Pizzeria" width="240"> |
+
 </div>
 
 ---
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md)**
 
 </div>

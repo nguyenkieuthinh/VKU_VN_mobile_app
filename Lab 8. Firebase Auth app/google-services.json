@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917969299667",
+    "project_id": "vku-laptrinhdidong-email-auth",
+    "storage_bucket": "vku-laptrinhdidong-email-auth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917969299667:android:a88ed6d12168f531aa8c26",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXzMP1hxJhUYViCio7WogSG6ll8D8JkqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
