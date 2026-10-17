@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 7 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình, lưu trữ dữ liệu trực tuyến và xác thực người dùng với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
+> Tổng hợp 8 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình, lưu trữ dữ liệu cục bộ bằng **Room** và lưu trữ trực tuyến / xác thực người dùng với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -25,40 +25,20 @@
 | 6 | Cupcake | Navigation Compose, ViewModel, StateFlow, đặt hàng | [Xem chi tiết](README_LAB_6.md) |
 | 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
+| 9 | Inventory | Room + SQLite: `@Entity`, `@Dao`, `@Database`, repository, lưu item khi bấm Save | [Xem chi tiết](README_LAB_9.md) |
 
 ## Video demo
 
-### Lab 2 · Business Card
-
-<video src="https://github.com/user-attachments/assets/b9ac1e9a-b44b-49f4-92cc-eb7eca6780f7" controls width="100%"></video>
-
-### Lab 3 · Dice Roller
-
-<video src="https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906" controls width="100%"></video>
-
-### Lab 4 · Tip Calculator
-
-<video src="https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d" controls width="100%"></video>
-
-### Lab 5 · Woof
-
-<video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
-
-### Lab 6 · Cupcake
-
-<video src="https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa" controls width="100%"></video>
-
-### Lab 7 · Firebase CRUD
-
-<!-- Dán link video demo Lab 7 vào đây, cùng dạng với các lab trên:
-<video src="LINK_VIDEO_DEMO" controls width="100%"></video>
--->
-
-> *Video demo sẽ được cập nhật.*
-
-### Lab 8 · Pizzeria
-
-<video src="https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16" controls width="100%"></video>
+| Lab | Ứng dụng | Link video |
+|:---:|----------|:----------:|
+| 2 | Business Card | [▶ Xem video](https://github.com/user-attachments/assets/b9ac1e9a-b44b-49f4-92cc-eb7eca6780f7) |
+| 3 | Dice Roller | [▶ Xem video](https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906) |
+| 4 | Tip Calculator | [▶ Xem video](https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d) |
+| 5 | Woof | [▶ Xem video](https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3) |
+| 6 | Cupcake | [▶ Xem video](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa) |
+| 7 | Firebase CRUD | *Video demo sẽ được cập nhật.* |
+| 8 | Pizzeria | [▶ Xem video](https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16) |
+| 9 | Inventory | *Video demo sẽ được cập nhật.* |
 
 ## Ảnh minh họa
 
@@ -72,9 +52,9 @@
 |:------------:|:---------------:|:---------------------:|
 | <img src="video/lab5_1.png" alt="Woof" width="240"> | <img src="video/lab6_1.png" alt="Cupcake" width="240"> | <img src="video/lab7_1.png" alt="Firebase CRUD" width="240"> |
 
-| Lab 8 · Pizzeria |
-|:----------------:|
-| <img src="video/lab8_1.png" alt="Pizzeria" width="240"> |
+| Lab 8 · Pizzeria | Lab 9 · Inventory |
+|:----------------:|:-----------------:|
+| <img src="video/lab8_1.png" alt="Pizzeria" width="240"> | <img src="video/lab9_1.png" alt="Inventory" width="240"> |
 
 </div>
 
@@ -82,6 +62,6 @@
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md) → [README_LAB_9.md](README_LAB_9.md)**
 
 </div>
