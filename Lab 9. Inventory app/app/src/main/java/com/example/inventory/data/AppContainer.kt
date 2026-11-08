@@ -16,8 +16,6 @@
 
 package com.example.inventory.data
 
-import android.content.Context
-
 /**
  * App container for Dependency injection.
  */
@@ -26,13 +24,13 @@ interface AppContainer {
 }
 
 /**
- * [AppContainer] implementation that provides instance of [OfflineItemsRepository]
+ * [AppContainer] implementation that provides instance of [FirestoreItemsRepository]
  */
-class AppDataContainer(private val context: Context) : AppContainer {
+class AppDataContainer : AppContainer {
     /**
      * Implementation for [ItemsRepository]
      */
     override val itemsRepository: ItemsRepository by lazy {
-        OfflineItemsRepository(InventoryDatabase.getDatabase(context).itemDao())
+        FirestoreItemsRepository()
     }
 }

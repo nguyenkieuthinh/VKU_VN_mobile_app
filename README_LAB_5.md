@@ -19,7 +19,9 @@
 
 ## Video demo
 
-<video src="https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3" controls width="100%"></video>
+[▶ Xem video demo](https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3)
+
+https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3
 
 ## Ảnh minh họa
 

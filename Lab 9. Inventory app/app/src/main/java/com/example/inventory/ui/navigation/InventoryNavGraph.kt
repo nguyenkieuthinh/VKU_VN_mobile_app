@@ -62,7 +62,7 @@ fun InventoryNavHost(
         composable(
             route = ItemDetailsDestination.routeWithArgs,
             arguments = listOf(navArgument(ItemDetailsDestination.itemIdArg) {
-                type = NavType.IntType
+                type = NavType.StringType
             })
         ) {
             ItemDetailsScreen(
@@ -73,7 +73,7 @@ fun InventoryNavHost(
         composable(
             route = ItemEditDestination.routeWithArgs,
             arguments = listOf(navArgument(ItemEditDestination.itemIdArg) {
-                type = NavType.IntType
+                type = NavType.StringType
             })
         ) {
             ItemEditScreen(

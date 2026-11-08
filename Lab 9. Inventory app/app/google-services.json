@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419312739507",
+    "project_id": "vku-inventory",
+    "storage_bucket": "vku-inventory.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419312739507:android:ff3318c054fb32ba8d7cc6",
+        "android_client_info": {
+          "package_name": "com.thinhnk.inventory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwYv3PZ6QMd9bGOfgxaPXATxhcNPI1y0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

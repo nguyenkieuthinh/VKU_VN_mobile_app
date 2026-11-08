@@ -17,12 +17,42 @@
 package com.example.inventory.ui.home
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.inventory.data.Item
+import com.example.inventory.data.ItemsRepository
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 /**
- * ViewModel to retrieve all items in the Room database.
+ * ViewModel to retrieve all items from the repository.
  */
-class HomeViewModel : ViewModel() {
+class HomeViewModel(itemsRepository: ItemsRepository) : ViewModel() {
+
+    /**
+     * Stream [HomeUiState] from the database: bảng `items` đổi thì UI tự cập nhật.
+     */
+    val homeUiState: StateFlow<HomeUiState> =
+        itemsRepository.getAllItemsStream().map { HomeUiState(it) }
+            .catch { error ->
+                emit(
+                    HomeUiState(
+                        errorMessage = if (error.message?.contains("PERMISSION_DENIED") == true) {
+                            "Firestore chưa cho phép đọc dữ liệu. Hãy kiểm tra Firestore Rules."
+                        } else {
+                            "Không tải được dữ liệu. Hãy kiểm tra kết nối và Firestore Rules."
+                        }
+                    )
+                )
+            }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
+                initialValue = HomeUiState()
+            )
+
     companion object {
         private const val TIMEOUT_MILLIS = 5_000L
     }
@@ -31,4 +61,7 @@ class HomeViewModel : ViewModel() {
 /**
  * Ui State for HomeScreen
  */
-data class HomeUiState(val itemList: List<Item> = listOf())
+data class HomeUiState(
+    val itemList: List<Item> = listOf(),
+    val errorMessage: String? = null
+)

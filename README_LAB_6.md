@@ -19,8 +19,9 @@
 
 ## Video demo
 
-<!-- Thay link bên dưới bằng video demo Lab 6 -->
-<video src="https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa" controls width="100%"></video>
+[▶ Xem video demo](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa)
+
+https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa
 
 ## Ảnh minh họa
 

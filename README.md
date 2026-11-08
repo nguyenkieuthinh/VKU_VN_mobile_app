@@ -25,7 +25,7 @@
 | 6 | Cupcake | Navigation Compose, ViewModel, StateFlow, đặt hàng | [Xem chi tiết](README_LAB_6.md) |
 | 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
-| 9 | Inventory | Room + SQLite: `@Entity`, `@Dao`, `@Database`, repository, lưu item khi bấm Save | [Xem chi tiết](README_LAB_9.md) |
+| 9 | Inventory | Cloud Firestore: thêm, đọc, sửa, xóa mặt hàng | [Xem chi tiết](README_LAB_9.md) |
 
 ## Video demo
 
@@ -38,7 +38,7 @@
 | 6 | Cupcake | [▶ Xem video](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa) |
 | 7 | Firebase CRUD | *Video demo sẽ được cập nhật.* |
 | 8 | Pizzeria | [▶ Xem video](https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16) |
-| 9 | Inventory | *Video demo sẽ được cập nhật.* |
+| 9 | Inventory | [▶ Xem video](https://github.com/user-attachments/assets/629ad68b-015c-43f3-9c99-5c02061ce086) |
 
 ## Ảnh minh họa
 

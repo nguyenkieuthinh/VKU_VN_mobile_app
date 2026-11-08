@@ -20,14 +20,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.inventory.data.Item
 import com.example.inventory.data.ItemsRepository
-import kotlinx.coroutines.launch
 import java.text.NumberFormat
 
 /**
- * ViewModel to validate and insert items in the Room database.
+ * ViewModel to validate and insert items in Cloud Firestore.
  */
 class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewModel() {
 
@@ -47,14 +45,11 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
     }
 
     /**
-     * Inserts the item in the [itemUiState] into the database, only when the input is valid.
-     * The insert runs in [viewModelScope] so it is cancelled if the ViewModel goes away.
+     * Inserts the item into the repository after validating the current form.
      */
-    fun saveItem() {
+    suspend fun saveItem() {
         if (validateInput()) {
-            viewModelScope.launch {
-                itemsRepository.insertItem(itemUiState.itemDetails.toItem())
-            }
+            itemsRepository.insertItem(itemUiState.itemDetails.toItem())
         }
     }
 
@@ -74,7 +69,7 @@ data class ItemUiState(
 )
 
 data class ItemDetails(
-    val id: Int = 0,
+    val id: String = "",
     val name: String = "",
     val price: String = "",
     val quantity: String = "",

@@ -17,15 +17,15 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.gms.google-services")
 }
 
 android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.inventory"
+        applicationId = "com.thinhnk.inventory"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -76,11 +76,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("androidx.navigation:navigation-compose:2.8.5")
 
-    // Room: luu du lieu xuong SQLite. room-compiler sinh code qua KSP luc build.
-    // Phien ban lay tu build.gradle.kts o thu muc goc.
-    implementation("androidx.room:room-runtime:${rootProject.extra["room_version"]}")
-    implementation("androidx.room:room-ktx:${rootProject.extra["room_version"]}")
-    ksp("androidx.room:room-compiler:${rootProject.extra["room_version"]}")
+    implementation(platform("com.google.firebase:firebase-bom:35.1.0"))
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
 
     // Testing
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")

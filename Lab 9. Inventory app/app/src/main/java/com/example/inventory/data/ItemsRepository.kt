@@ -30,7 +30,7 @@ interface ItemsRepository {
     /**
      * Retrieve an item from the given data source that matches with the [id].
      */
-    fun getItemStream(id: Int): Flow<Item>
+    fun getItemStream(id: String): Flow<Item>
 
     /**
      * Insert item in the data source

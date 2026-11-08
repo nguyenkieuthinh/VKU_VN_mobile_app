@@ -18,16 +18,64 @@ package com.example.inventory.ui.item
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.inventory.data.Item
 import com.example.inventory.data.ItemsRepository
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 /**
- * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
+ * ViewModel to retrieve, update and delete an item from Cloud Firestore.
  */
 class ItemDetailsViewModel(
-    savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle,
+    private val itemsRepository: ItemsRepository
 ) : ViewModel() {
 
-    private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+    private val itemId: String = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+
+    /**
+     * Stream chi tiết của item đang xem. Item bị xoá thì UI tự cập nhật.
+     */
+    val itemDetailsUiState: StateFlow<ItemDetailsUiState> =
+        itemsRepository.getItemStream(itemId)
+            .filterNotNull()
+            .map { ItemDetailsUiState(outOfStock = it.quantity <= 0, itemDetails = it.toItemDetails()) }
+            .catch { error ->
+                emit(
+                    ItemDetailsUiState(
+                        errorMessage = if (error.message?.contains("PERMISSION_DENIED") == true) {
+                            "Firestore chưa cho phép đọc dữ liệu. Hãy kiểm tra Firestore Rules."
+                        } else {
+                            "Không tải được sản phẩm từ Firestore."
+                        }
+                    )
+                )
+            }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
+                initialValue = ItemDetailsUiState()
+            )
+
+    /** Bán 1 sản phẩm: giảm số lượng tồn kho đi 1 đơn vị. */
+    fun reduceQuantity(item: Item) {
+        if (item.quantity > 0) {
+            viewModelScope.launch {
+                itemsRepository.updateItem(item.copy(quantity = item.quantity - 1))
+            }
+        }
+    }
+
+    /** Xoá item đang xem khỏi database. */
+    suspend fun deleteItem(item: Item) {
+        itemsRepository.deleteItem(item)
+    }
 
     companion object {
         private const val TIMEOUT_MILLIS = 5_000L
@@ -39,5 +87,6 @@ class ItemDetailsViewModel(
  */
 data class ItemDetailsUiState(
     val outOfStock: Boolean = true,
-    val itemDetails: ItemDetails = ItemDetails()
+    val itemDetails: ItemDetails = ItemDetails(),
+    val errorMessage: String? = null
 )
