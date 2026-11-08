@@ -19,15 +19,18 @@
 
 ## Video demo
 
-[▶ Xem video demo](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa)
+[▶ Xem GIF demo Lab 6](video/lab6_demo.gif)
 
-https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa
+![GIF xem nhanh Lab 6](video/lab6_demo.gif)
 
 ## Ảnh minh họa
 
 <div align="center">
-  <!-- Thêm ảnh chụp màn hình vào thư mục video/ với tên lab6_1.png -->
-  <img src="video/lab6_1.png" alt="Lab 6 - Cupcake" width="300">
+
+| Màn hình đặt bánh | Chọn ngày nhận | Tóm tắt đơn hàng |
+|:-----------------:|:--------------:|:----------------:|
+| <img src="video/lab6_1.png" alt="Màn hình đặt bánh" width="220"> | <img src="video/lab6_2.png" alt="Chọn ngày nhận" width="220"> | <img src="video/lab6_3.png" alt="Tóm tắt đơn hàng" width="220"> |
+
 </div>
 
 ## Tính năng nổi bật

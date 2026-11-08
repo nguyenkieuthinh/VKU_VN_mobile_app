@@ -106,7 +106,7 @@ fun SignIn(navController: NavController) {
 
             Spacer(Modifier.height(4.dp))
 
-            AuthButton("Sign In") {
+            AuthButton("Login") {
                 signInWithEmail(firebaseAuth, email, password, context) {
                     navController.navigate(Screen.Home.route) {
                         // Dang nhap xong thi bo man hinh SignIn khoi ngan xep
@@ -121,7 +121,7 @@ fun SignIn(navController: NavController) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Is it first for you? ", fontSize = 14.sp, color = PizzaGrey)
             Text(
-                    "Sign Up now!",
+                    "Sign Up",
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     color = PizzaRed,
@@ -131,14 +131,6 @@ fun SignIn(navController: NavController) {
                             }
             )
         }
-
-        Spacer(Modifier.height(28.dp))
-
-        Text("OR Sign In with", fontSize = 15.sp, color = PizzaGrey)
-
-        Spacer(Modifier.height(16.dp))
-
-        SocialSignInRow()
 
         Spacer(Modifier.height(32.dp))
     }

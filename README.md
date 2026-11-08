@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 8 ứng dụng Android được xây dựng từ đầu bằng **Kotlin** và **Jetpack Compose**, đi từ làm quen giao diện cơ bản đến quản lý trạng thái (state), tương tác người dùng, Material Theming, điều hướng đa màn hình, lưu trữ dữ liệu cục bộ bằng **Room** và lưu trữ trực tuyến / xác thực người dùng với **Firebase**. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
+> Tổng hợp 8 ứng dụng Android được xây dựng bằng **Kotlin** và **Jetpack Compose**, từ giao diện cơ bản đến quản lý trạng thái, điều hướng, Cloud Firestore và Firebase Authentication. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -36,7 +36,7 @@
 | 4 | Tip Calculator | [▶ Xem video](https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d) |
 | 5 | Woof | [▶ Xem video](https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3) |
 | 6 | Cupcake | [▶ Xem video](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa) |
-| 7 | Firebase CRUD | *Video demo sẽ được cập nhật.* |
+| 7 | Firebase CRUD | [▶ Xem GIF](video/lab7_demo.gif) |
 | 8 | Pizzeria | [▶ Xem video](https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16) |
 | 9 | Inventory | [▶ Xem video](https://github.com/user-attachments/assets/629ad68b-015c-43f3-9c99-5c02061ce086) |
 
@@ -46,15 +46,15 @@
 
 | Lab 2 · Business Card | Lab 3 · Dice Roller | Lab 4 · Tip Calculator |
 |:---------------------:|:-------------------:|:----------------------:|
-| <img src="video/lab2_1.jpg" alt="Business Card" width="240"> | <img src="video/lab3_1.jpg" alt="Dice Roller" width="240"> | <img src="video/lab4_1.jpg" alt="Tip Calculator" width="240"> |
+| <img src="video/lab2_demo.gif" alt="Business Card demo" width="240"> | <img src="video/lab3_demo.gif" alt="Dice Roller demo" width="240"> | <img src="video/lab4_demo.gif" alt="Tip Calculator demo" width="240"> |
 
 | Lab 5 · Woof | Lab 6 · Cupcake | Lab 7 · Firebase CRUD |
 |:------------:|:---------------:|:---------------------:|
-| <img src="video/lab5_1.png" alt="Woof" width="240"> | <img src="video/lab6_1.png" alt="Cupcake" width="240"> | <img src="video/lab7_1.png" alt="Firebase CRUD" width="240"> |
+| <img src="video/lab5_demo.gif" alt="Woof demo" width="240"> | <img src="video/lab6_demo.gif" alt="Cupcake demo" width="240"> | <img src="video/lab7_demo.gif" alt="Firebase CRUD demo" width="240"> |
 
 | Lab 8 · Pizzeria | Lab 9 · Inventory |
 |:----------------:|:-----------------:|
-| <img src="video/lab8_1.png" alt="Pizzeria" width="240"> | <img src="video/lab9_1.png" alt="Inventory" width="240"> |
+| <img src="video/lab8_demo.gif" alt="Pizzeria demo" width="240"> | <img src="video/lab9_demo.gif" alt="Inventory demo" width="240"> |
 
 </div>
 

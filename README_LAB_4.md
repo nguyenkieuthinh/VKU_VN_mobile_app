@@ -20,7 +20,7 @@
 
 [▶ Xem video demo](https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d)
 
-https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d
+![GIF xem nhanh Lab 4](video/lab4_demo.gif)
 
 ## Ảnh minh họa
 

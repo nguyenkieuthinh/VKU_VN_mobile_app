@@ -20,11 +20,9 @@
 
 ## Video demo
 
-<!-- Dán link video demo Lab 7 vào đây, cùng dạng với các lab trước:
-<video src="LINK_VIDEO_DEMO" controls width="100%"></video>
--->
+[▶ Xem GIF demo Lab 7](video/lab7_demo.gif)
 
-> *Video demo sẽ được cập nhật.*
+![GIF minh họa Lab 7](video/lab7_demo.gif)
 
 ## Ảnh minh họa
 

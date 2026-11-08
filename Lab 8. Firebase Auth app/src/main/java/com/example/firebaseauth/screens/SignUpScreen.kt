@@ -108,11 +108,16 @@ fun SignUp(navController: NavController) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Đã có tài khoản? ", fontSize = 14.sp, color = PizzaGrey)
             Text(
-                    "Sign In",
+                    "Login",
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     color = PizzaRed,
-                    modifier = Modifier.clickable { navController.navigate(Screen.SignIn.route) }
+                    modifier =
+                            Modifier.clickable {
+                                navController.navigate(Screen.SignIn.route) {
+                                    popUpTo(Screen.SignUp.route) { inclusive = true }
+                                }
+                            }
             )
         }
 

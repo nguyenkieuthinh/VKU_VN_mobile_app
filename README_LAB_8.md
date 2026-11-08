@@ -20,17 +20,17 @@
 
 ## Video demo
 
-[▶ Xem video demo](https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16)
+[▶ Xem GIF demo Lab 8](video/lab8_demo.gif)
 
-https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16
+![GIF xem nhanh Lab 8](video/lab8_demo.gif)
 
 ## Ảnh minh họa
 
 <div align="center">
 
-| Đăng nhập | Đăng ký | Sau khi đăng nhập |
-|:---------:|:-------:|:-----------------:|
-| <img src="video/lab8_1.png" alt="Màn hình đăng nhập" width="240"> | <img src="video/lab8_2.png" alt="Màn hình đăng ký" width="240"> | <img src="video/lab8_3.png" alt="Màn hình Home" width="240"> |
+| Đăng ký | Sau khi đăng nhập |
+|:-------:|:-----------------:|
+| <img src="video/lab8_demo_signup.png" alt="Màn hình đăng ký" width="240"> | <img src="video/lab8_demo_home.png" alt="Màn hình Home" width="240"> |
 
 </div>
 
@@ -46,7 +46,8 @@ https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16
 | Nhớ phiên đăng nhập | Firebase tự lưu phiên — mở lại app vào thẳng `Home`, không bắt đăng nhập lại |
 | Hiển thị người dùng | Màn hình Home hiện email của tài khoản đang đăng nhập |
 | Điều hướng | `NavHost` 3 màn hình `SignIn` → `SignUp` → `Home`, `popUpTo` để không quay lại màn hình cũ |
-| Giao diện | Ảnh pizza header uốn sóng, ô nhập viền đỏ, nút tròn Google/Facebook (chỉ là giao diện) |
+| Nút đặt món | `START ORDER` hiện chỉ là giao diện minh họa; chức năng đặt món không thuộc yêu cầu Lab 8 |
+| Giao diện | Ảnh pizza header uốn sóng, ô nhập viền đỏ, hai lựa chọn `Login` và `Sign Up` |
 
 ## Kiến thức áp dụng
 
@@ -75,7 +76,7 @@ https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16
 | `screens/SignInScreen.kt` | Màn hình **đăng nhập** + `signInWithEmail()` |
 | `screens/SignUpScreen.kt` | Màn hình **đăng ký** + `signUpWithEmail()` |
 | `screens/HomeScreen.kt` | Màn hình **sau khi đăng nhập** + nút `SignOut` |
-| `screens/AuthComponents.kt` | Thành phần dùng chung: `PizzaHeader`, `AuthTextField`, `AuthButton`, `SocialSignInRow` |
+| `screens/AuthComponents.kt` | Thành phần dùng chung: `PizzaHeader`, `AuthTextField`, `AuthButton` |
 | `ui/theme/*` | Theme: `Color`, `Theme`, `Type` |
 
 ## Luồng hoạt động
@@ -84,7 +85,7 @@ https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16
         Mynavigation()  (NavHost, startDestination = signin)
                  │
                  ▼
-        ┌─────────────────┐   "Sign Up now!"   ┌─────────────────┐
+        ┌─────────────────┐     "Sign Up"      ┌─────────────────┐
         │   SignIn        │ ─────────────────► │   SignUp        │
         │  email+password │                    │  email+password │
         └─────────────────┘                    └─────────────────┘
@@ -136,7 +137,7 @@ cd "Lab 8. Firebase Auth app"
 | `File google-services.json is missing` | Chưa đặt `google-services.json` vào thư mục gốc module |
 | `API key not valid. Please pass a valid API key.` | `google-services.json` không khớp `applicationId` → tạo lại app Android trong Console đúng package rồi tải file mới |
 | `CONFIGURATION_NOT_FOUND` | Chưa bật provider **Email/Password** trong Authentication → Sign-in method |
-| `The email address is already in use by another account.` | Email đã đăng ký → bấm *Sign In now!* thay vì *Sign Up* |
+| `The email address is already in use by another account.` | Email đã đăng ký → chọn *Login* thay vì *Sign Up* |
 | `The given password is invalid. [ Password should be at least 6 characters ]` | Mật khẩu dưới 6 ký tự |
 | `The email address is badly formatted.` | Chuỗi nhập vào không phải email hợp lệ |
 | `The password is invalid or the user does not have a password.` | Sai mật khẩu |

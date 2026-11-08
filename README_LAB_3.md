@@ -20,7 +20,7 @@
 
 [▶ Xem video demo](https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906)
 
-https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906
+![GIF xem nhanh Lab 3](video/lab3_demo.gif)
 
 ## Ảnh minh họa
 

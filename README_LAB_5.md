@@ -21,7 +21,7 @@
 
 [▶ Xem video demo](https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3)
 
-https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3
+![GIF xem nhanh Lab 5](video/lab5_demo.gif)
 
 ## Ảnh minh họa
 

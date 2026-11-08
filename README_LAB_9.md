@@ -6,7 +6,7 @@ Quản lý hàng hóa bằng Jetpack Compose và Cloud Firestore (`items`).
 
 [▶ Xem video demo](https://github.com/user-attachments/assets/629ad68b-015c-43f3-9c99-5c02061ce086)
 
-https://github.com/user-attachments/assets/629ad68b-015c-43f3-9c99-5c02061ce086
+![GIF xem nhanh Lab 9](video/lab9_demo.gif)
 
 ## App
 
