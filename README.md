@@ -27,20 +27,20 @@
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
 | 9 | Inventory | Cloud Firestore: thêm, đọc, sửa, xóa mặt hàng | [Xem chi tiết](README_LAB_9.md) |
 
-## Video demo
+## Link xem GIF demo
 
-| Lab | Ứng dụng | Link video |
+| Lab | Ứng dụng | Link GIF |
 |:---:|----------|:----------:|
-| 2 | Business Card | [▶ Xem video](https://github.com/user-attachments/assets/b9ac1e9a-b44b-49f4-92cc-eb7eca6780f7) |
-| 3 | Dice Roller | [▶ Xem video](https://github.com/user-attachments/assets/8facb0d1-aefd-46f5-a906-2daeefa00906) |
-| 4 | Tip Calculator | [▶ Xem video](https://github.com/user-attachments/assets/ebc38e7d-d93e-4e6e-8602-26c859a67d8d) |
-| 5 | Woof | [▶ Xem video](https://github.com/user-attachments/assets/aad9f193-5be5-43d5-843a-2b8058e601b3) |
-| 6 | Cupcake | [▶ Xem video](https://github.com/user-attachments/assets/f46eb5ac-a99f-4f72-9ffa-5d771bdae3aa) |
+| 2 | Business Card | [▶ Xem GIF](video/lab2_demo.gif) |
+| 3 | Dice Roller | [▶ Xem GIF](video/lab3_demo.gif) |
+| 4 | Tip Calculator | [▶ Xem GIF](video/lab4_demo.gif) |
+| 5 | Woof | [▶ Xem GIF](video/lab5_demo.gif) |
+| 6 | Cupcake | [▶ Xem GIF](video/lab6_demo.gif) |
 | 7 | Firebase CRUD | [▶ Xem GIF](video/lab7_demo.gif) |
-| 8 | Pizzeria | [▶ Xem video](https://github.com/user-attachments/assets/9f9c5f75-93ea-43c5-9c1c-bbd37f95ce16) |
-| 9 | Inventory | [▶ Xem video](https://github.com/user-attachments/assets/629ad68b-015c-43f3-9c99-5c02061ce086) |
+| 8 | Pizzeria | [▶ Xem GIF](video/lab8_demo.gif) |
+| 9 | Inventory | [▶ Xem GIF](video/lab9_demo.gif) |
 
-## Ảnh minh họa
+## GIF demo
 
 <div align="center">
 
