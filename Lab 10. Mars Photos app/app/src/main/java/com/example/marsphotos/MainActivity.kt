@@ -7,19 +7,19 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.marsphotos.ui.MarsPhotosApp
-import com.example.marsphotos.ui.theme.MarsPhotosTheme
+import com.example.marsphotos.ui.InternetImagesApp
+import com.example.marsphotos.ui.theme.InternetImagesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MarsPhotosTheme {
+            InternetImagesTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MarsPhotosApp()
+                    InternetImagesApp()
                 }
             }
         }

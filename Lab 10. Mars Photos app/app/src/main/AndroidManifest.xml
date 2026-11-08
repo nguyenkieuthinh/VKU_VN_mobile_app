@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="Mars Photos"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity

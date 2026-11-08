@@ -2,6 +2,7 @@ package com.example.marsphotos.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.marsphotos.data.ImageLinksDataSource
 import com.example.marsphotos.data.ImageLinksRepository
 import com.example.marsphotos.data.RemoteImage
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,8 +16,9 @@ sealed interface InternetImagesUiState {
     data object Error : InternetImagesUiState
 }
 
-class ImageLinksViewModel : ViewModel() {
-    private val repository = ImageLinksRepository()
+class ImageLinksViewModel(
+    private val repository: ImageLinksDataSource = ImageLinksRepository()
+) : ViewModel() {
     private val _uiState = MutableStateFlow<InternetImagesUiState>(InternetImagesUiState.Loading)
     val uiState: StateFlow<InternetImagesUiState> = _uiState.asStateFlow()
 

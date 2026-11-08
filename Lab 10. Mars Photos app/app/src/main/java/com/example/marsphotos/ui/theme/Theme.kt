@@ -4,12 +4,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-private val MarsColorScheme = lightColorScheme()
+private val AppColorScheme = lightColorScheme()
 
 @Composable
-fun MarsPhotosTheme(content: @Composable () -> Unit) {
+fun InternetImagesTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = MarsColorScheme,
+        colorScheme = AppColorScheme,
         content = content
     )
 }

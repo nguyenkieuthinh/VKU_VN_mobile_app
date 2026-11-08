@@ -1,23 +1,26 @@
-# Lab 10 · Mars Photos
+# Lab 10 · Load ảnh từ Internet
 
-Ứng dụng Jetpack Compose lấy danh sách ảnh sao Hỏa qua REST API và tải ảnh từ URL bằng Coil.
+Ứng dụng Jetpack Compose tải danh sách URL từ một file trên GitHub rồi dùng Coil để tải và hiển thị ảnh Internet.
 
 ## Tính năng
 
-- Gọi Mars Photos API bằng Retrofit và Gson.
-- Hiển thị tối đa 20 ảnh sao Hỏa trong lưới thích ứng `LazyVerticalGrid`.
-- Có tab tải ảnh từ các URL trong file `Lab 10. Mars Photos app/img/image-links.txt` trên GitHub.
-- Tab ảnh Internet đọc lại danh sách khi mở, tự hiển thị link mới được thêm và giới hạn tối đa 20 ảnh.
-- Hiển thị trạng thái đang tải, lỗi tải ảnh, lỗi mạng và nút thử lại.
+- Đọc các URL trong file `Lab 10. Mars Photos app/img/image-links.txt` trên GitHub Raw.
+- Hiển thị tối đa 20 ảnh bằng `LazyVerticalGrid`, mỗi hàng có một ảnh.
+- Nút tải lại lấy danh sách URL mới sau khi file GitHub được cập nhật.
+- Hiển thị trạng thái đang tải, lỗi ảnh, lỗi mạng và nút thử lại.
 - Giao diện và trạng thái được viết bằng Kotlin/Jetpack Compose, không dùng XML layout.
 
 ## Ảnh mẫu
 
-Mỗi dòng trong `img/image-links.txt` là một URL ảnh HTTPS. Để thêm ảnh, thêm URL vào file rồi push lên GitHub; khi mở lại tab **Ảnh Internet**, app tải danh sách mới.
+Mỗi dòng trong `img/image-links.txt` là một URL ảnh HTTPS. Hiện file có 3 ảnh. Để thêm ảnh, thêm URL mới vào file rồi push lên GitHub; bấm nút tải lại trong app để lấy danh sách mới. App bỏ URL trùng và chỉ hiển thị tối đa 20 ảnh.
 
-| Hồ núi lúc hoàng hôn | Đường núi | Hồ Wanaka |
-|:---:|:---:|:---:|
-| ![Hồ núi lúc hoàng hôn](Lab%2010.%20Mars%20Photos%20app/img/ddg_1775238082972349461.jpg) | ![Đường núi](Lab%2010.%20Mars%20Photos%20app/img/ddg_1774780397475447773.jpg) | ![Hồ Wanaka](Lab%2010.%20Mars%20Photos%20app/img/ken-cheung-KonWFWUaAuk-unsplash.jpg) |
+| Hồ núi lúc hoàng hôn |
+|:---:|
+| ![Hồ núi lúc hoàng hôn](Lab%2010.%20Mars%20Photos%20app/img/ddg_1775238082972349461.jpg) |
+| Đường núi |
+| ![Đường núi](Lab%2010.%20Mars%20Photos%20app/img/ddg_1774780397475447773.jpg) |
+| Hồ Wanaka |
+| ![Hồ Wanaka](Lab%2010.%20Mars%20Photos%20app/img/ken-cheung-KonWFWUaAuk-unsplash.jpg) |
 
 ## Chạy ứng dụng
 

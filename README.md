@@ -26,7 +26,7 @@
 | 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
 | 9 | Inventory | Cloud Firestore: thêm, đọc, sửa, xóa mặt hàng | [Xem chi tiết](README_LAB_9.md) |
-| 10 | Mars Photos | Retrofit, Gson, Coil, ảnh Internet và lưới sao Hỏa giới hạn 20 ảnh | [Xem chi tiết](README_LAB_10.md) |
+| 10 | Load ảnh từ Internet | Coil, danh sách URL cập nhật từ GitHub, tối đa 20 ảnh | [Xem chi tiết](README_LAB_10.md) |
 
 ## GIF demo
 

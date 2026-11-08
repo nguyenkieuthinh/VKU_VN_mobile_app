@@ -1,11 +1,8 @@
 <resources>
-    <string name="app_name">Mars Photos</string>
-    <string name="mars_images">Ảnh sao Hỏa</string>
-    <string name="internet_images">Ảnh Internet</string>
-    <string name="mars_photo_description">Ảnh bề mặt sao Hỏa số %1$s</string>
+    <string name="app_name">Ảnh Internet</string>
     <string name="image_load_failed">Không tải được ảnh</string>
-    <string name="loading_error">Không thể tải ảnh sao Hỏa. Hãy kiểm tra kết nối mạng và thử lại.</string>
     <string name="image_links_error">Không thể tải danh sách link ảnh. Hãy kiểm tra kết nối mạng và thử lại.</string>
     <string name="empty_image_links">Chưa có link ảnh trong danh sách.</string>
+    <string name="refresh">Tải lại</string>
     <string name="retry">Thử lại</string>
 </resources>

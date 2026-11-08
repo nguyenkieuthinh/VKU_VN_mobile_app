@@ -13,16 +13,16 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BrokenImage
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -31,7 +31,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,139 +43,90 @@ import coil.compose.AsyncImage
 import coil.compose.AsyncImagePainter
 import coil.request.ImageRequest
 import com.example.marsphotos.R
-import com.example.marsphotos.data.MarsPhoto
 import com.example.marsphotos.data.RemoteImage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MarsPhotosApp(marsViewModel: MarsViewModel = viewModel()) {
-    val uiState by marsViewModel.uiState.collectAsState()
-    val imageLinksViewModel: ImageLinksViewModel = viewModel()
-    var selectedTab by rememberSaveable { mutableStateOf(0) }
+fun InternetImagesApp(imageLinksViewModel: ImageLinksViewModel = viewModel()) {
+    val state by imageLinksViewModel.uiState.collectAsState()
 
-    LaunchedEffect(selectedTab) {
-        if (selectedTab == 1) imageLinksViewModel.loadImages()
+    LaunchedEffect(Unit) {
+        imageLinksViewModel.loadImages()
     }
 
     Scaffold(
         topBar = {
-            Column {
-                TopAppBar(title = { Text(stringResource(R.string.app_name)) })
-                TabRow(selectedTabIndex = selectedTab) {
-                    Tab(
-                        selected = selectedTab == 0,
-                        onClick = { selectedTab = 0 },
-                        text = { Text(stringResource(R.string.mars_images)) }
+            TopAppBar(
+                title = { Text(stringResource(R.string.app_name)) },
+                actions = {
+                    IconButton(onClick = imageLinksViewModel::loadImages) {
+                        Icon(
+                            imageVector = Icons.Default.Refresh,
+                            contentDescription = stringResource(R.string.refresh)
+                        )
+                    }
+                }
+            )
+        }
+    ) { contentPadding ->
+        when (val imageState = state) {
+            InternetImagesUiState.Loading -> LoadingScreen(Modifier.padding(contentPadding))
+            is InternetImagesUiState.Success -> {
+                if (imageState.images.isEmpty()) {
+                    EmptyImagesScreen(
+                        modifier = Modifier.padding(contentPadding),
+                        retryAction = imageLinksViewModel::loadImages
                     )
-                    Tab(
-                        selected = selectedTab == 1,
-                        onClick = { selectedTab = 1 },
-                        text = { Text(stringResource(R.string.internet_images)) }
+                } else {
+                    InternetImagesList(
+                        images = imageState.images,
+                        modifier = Modifier.padding(contentPadding)
                     )
                 }
             }
-        }
-    ) { contentPadding ->
-        val contentModifier = Modifier.padding(contentPadding)
-        if (selectedTab == 1) {
-            InternetImagesScreen(imageLinksViewModel, contentModifier)
-        } else {
-            when (val state = uiState) {
-                MarsUiState.Loading -> LoadingScreen(contentModifier)
-                is MarsUiState.Success -> PhotosGridScreen(
-                    photos = state.photos,
-                    modifier = contentModifier
-                )
-                MarsUiState.Error -> ErrorScreen(
-                    message = stringResource(R.string.loading_error),
-                    retryAction = marsViewModel::getMarsPhotos,
-                    modifier = contentModifier
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun PhotosGridScreen(photos: List<MarsPhoto>, modifier: Modifier = Modifier) {
-    LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 150.dp),
-        modifier = modifier.fillMaxSize(),
-        contentPadding = PaddingValues(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        items(items = photos, key = { photo -> photo.id }) { photo ->
-            ImageCard(
-                id = photo.id,
-                imageUrl = photo.imageUrl,
-                description = stringResource(R.string.mars_photo_description, photo.id)
+            InternetImagesUiState.Error -> ErrorScreen(
+                retryAction = imageLinksViewModel::loadImages,
+                modifier = Modifier.padding(contentPadding)
             )
         }
     }
 }
 
 @Composable
-private fun InternetImagesScreen(
-    imageLinksViewModel: ImageLinksViewModel,
-    modifier: Modifier = Modifier
-) {
-    val state by imageLinksViewModel.uiState.collectAsState()
-
-    when (val imageState = state) {
-        InternetImagesUiState.Loading -> LoadingScreen(modifier)
-        is InternetImagesUiState.Success -> {
-            if (imageState.images.isEmpty()) {
-                EmptyImagesScreen(modifier, imageLinksViewModel::loadImages)
-            } else {
-                InternetImagesGrid(imageState.images, modifier)
-            }
-        }
-        InternetImagesUiState.Error -> ErrorScreen(
-            message = stringResource(R.string.image_links_error),
-            retryAction = imageLinksViewModel::loadImages,
-            modifier = modifier
-        )
-    }
-}
-
-@Composable
-private fun InternetImagesGrid(images: List<RemoteImage>, modifier: Modifier = Modifier) {
+private fun InternetImagesList(images: List<RemoteImage>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 150.dp),
+        columns = GridCells.Fixed(1),
         modifier = modifier.fillMaxSize(),
         contentPadding = PaddingValues(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(items = images, key = { image -> image.id }) { image ->
-            ImageCard(id = image.id, imageUrl = image.url, description = image.title)
+            InternetImageCard(image)
         }
     }
 }
 
 @Composable
-private fun ImageCard(
-    id: String,
-    imageUrl: String,
-    description: String,
-    modifier: Modifier = Modifier
-) {
-    var imageState by remember(id) {
+private fun InternetImageCard(image: RemoteImage, modifier: Modifier = Modifier) {
+    var imageState by remember(image.id) {
         mutableStateOf<AsyncImagePainter.State>(AsyncImagePainter.State.Empty)
     }
 
     Card(
-        modifier = modifier.fillMaxWidth().aspectRatio(1.15f),
+        modifier = modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
-        Box {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(16f / 9f)
+        ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(imageUrl)
+                    .data(image.url)
                     .crossfade(true)
                     .build(),
-                contentDescription = description,
+                contentDescription = image.title,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
                 onState = { imageState = it }
@@ -220,13 +170,13 @@ private fun EmptyImagesScreen(modifier: Modifier = Modifier, retryAction: () -> 
     ) {
         Text(stringResource(R.string.empty_image_links))
         Button(onClick = retryAction) {
-            Text(stringResource(R.string.retry))
+            Text(stringResource(R.string.refresh))
         }
     }
 }
 
 @Composable
-private fun ErrorScreen(message: String, retryAction: () -> Unit, modifier: Modifier = Modifier) {
+private fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize().padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -238,7 +188,7 @@ private fun ErrorScreen(message: String, retryAction: () -> Unit, modifier: Modi
             tint = MaterialTheme.colorScheme.error
         )
         Text(
-            text = message,
+            text = stringResource(R.string.image_links_error),
             modifier = Modifier.padding(vertical = 16.dp),
             style = MaterialTheme.typography.bodyLarge
         )
