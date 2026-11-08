@@ -46,6 +46,12 @@
 
 </div>
 
+### Lab 10 · Load ảnh từ Internet
+
+| Tải ảnh thành công | Trạng thái khi ảnh lỗi |
+|:---:|:---:|
+| ![Lab 10 tải ảnh từ Internet](video/lab10_1.png) | ![Lab 10 hiển thị trạng thái khi ảnh lỗi](video/lab10_2.png) |
+
 ---
 
 <div align="center">
