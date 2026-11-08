@@ -10,6 +10,12 @@
 - Hiển thị trạng thái đang tải, lỗi ảnh, lỗi mạng và nút thử lại.
 - Giao diện và trạng thái được viết bằng Kotlin/Jetpack Compose, không dùng XML layout.
 
+## Ảnh ứng dụng
+
+| Tải ảnh thành công | Một ảnh không tải được |
+|:---:|
+| <img src="video/lab10_1.png" alt="Màn hình ảnh Internet tải thành công" width="260"> | <img src="video/lab10_2.png" alt="Màn hình Lab 10 có một ảnh không tải được" width="260"> |
+
 ## Ảnh mẫu
 
 Mỗi dòng trong `img/image-links.txt` là một URL ảnh HTTPS. Hiện file có 3 ảnh. Để thêm ảnh, thêm URL mới vào file rồi push lên GitHub; bấm nút tải lại trong app để lấy danh sách mới. App bỏ URL trùng và chỉ hiển thị tối đa 20 ảnh.
