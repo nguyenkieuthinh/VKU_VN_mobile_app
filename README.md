@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 8 ứng dụng Android được xây dựng bằng **Kotlin** và **Jetpack Compose**, từ giao diện cơ bản đến quản lý trạng thái, điều hướng, Cloud Firestore và Firebase Authentication. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
+> Tổng hợp 10 ứng dụng Android được xây dựng bằng **Kotlin** và **Jetpack Compose**, từ giao diện cơ bản đến quản lý trạng thái, điều hướng, Cloud Firestore, Firebase Authentication và tải ảnh từ Internet. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -26,19 +26,7 @@
 | 7 | Firebase CRUD | Cloud Firestore: Thêm / Đọc / Sửa / Xóa, `addSnapshotListener` | [Xem chi tiết](README_LAB_7.md) |
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
 | 9 | Inventory | Cloud Firestore: thêm, đọc, sửa, xóa mặt hàng | [Xem chi tiết](README_LAB_9.md) |
-
-## Link xem GIF demo
-
-| Lab | Ứng dụng | Link GIF |
-|:---:|----------|:----------:|
-| 2 | Business Card | [▶ Xem GIF](video/lab2_demo.gif) |
-| 3 | Dice Roller | [▶ Xem GIF](video/lab3_demo.gif) |
-| 4 | Tip Calculator | [▶ Xem GIF](video/lab4_demo.gif) |
-| 5 | Woof | [▶ Xem GIF](video/lab5_demo.gif) |
-| 6 | Cupcake | [▶ Xem GIF](video/lab6_demo.gif) |
-| 7 | Firebase CRUD | [▶ Xem GIF](video/lab7_demo.gif) |
-| 8 | Pizzeria | [▶ Xem GIF](video/lab8_demo.gif) |
-| 9 | Inventory | [▶ Xem GIF](video/lab9_demo.gif) |
+| 10 | Mars Photos | Retrofit, Gson, Coil, ảnh Internet và lưới sao Hỏa giới hạn 20 ảnh | [Xem chi tiết](README_LAB_10.md) |
 
 ## GIF demo
 
@@ -62,6 +50,6 @@
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md) → [README_LAB_9.md](README_LAB_9.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md) → [README_LAB_9.md](README_LAB_9.md) → [README_LAB_10.md](README_LAB_10.md)**
 
 </div>
