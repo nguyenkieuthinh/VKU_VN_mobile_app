@@ -5,7 +5,7 @@
 ## Tính năng
 
 - Đọc các URL trong file `Lab 10. Mars Photos app/img/image-links.txt` trên GitHub Raw.
-- Hiển thị ảnh bằng `LazyVerticalGrid`, mỗi hàng có một ảnh.
+- Hiển thị tối đa 20 ảnh bằng `LazyVerticalGrid`, mỗi hàng có một ảnh.
 - Nút tải lại lấy danh sách URL mới sau khi file GitHub được cập nhật.
 - Hiển thị trạng thái đang tải, lỗi ảnh, lỗi mạng và nút thử lại.
 - Giao diện và trạng thái được viết bằng Kotlin/Jetpack Compose, không dùng XML layout.
