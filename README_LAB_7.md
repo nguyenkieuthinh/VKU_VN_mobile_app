@@ -34,6 +34,12 @@
 
 </div>
 
+## Web · Firebase Console
+
+![Firestore collection Courses](video/lab7_web_firestore.png)
+
+Project: `vku-laptrinhdidong` · Android ID: `com.example.firebaseproject` · Collection: `Courses`.
+
 ## Tính năng nổi bật
 
 | Tính năng | Mô tả |

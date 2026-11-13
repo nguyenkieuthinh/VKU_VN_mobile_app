@@ -34,6 +34,12 @@
 
 </div>
 
+## Web · Firebase Console
+
+![Danh sách user trong Firebase Authentication](video/lab8_web_auth_users.png)
+
+Project: `vku-laptrinhdidong-email-auth` · Android ID: `com.example.firebaseauth` · Provider: Email/Password.
+
 ## Tính năng nổi bật
 
 | Tính năng | Mô tả |
