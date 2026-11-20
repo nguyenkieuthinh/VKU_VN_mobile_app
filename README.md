@@ -59,6 +59,8 @@
 |:---:|:---:|:---:|
 | <img src="video/lab11_1.png" alt="Lab 11 danh sách cây" width="240"> | <img src="video/lab11_2.png" alt="Lab 11 chọn thời gian nhắc" width="240"> | <img src="video/lab11_3.png" alt="Lab 11 thông báo nhắc tưới cây" width="240"> |
 
+[▶ Xem video demo Lab 11](video/lab11_demo.mp4)
+
 ---
 
 <div align="center">

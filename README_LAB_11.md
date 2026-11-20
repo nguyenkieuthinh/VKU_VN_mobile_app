@@ -14,6 +14,12 @@
 - Snackbar xác nhận ngay sau khi đặt lời nhắc.
 - Giao diện Material 3, hỗ trợ dark mode và edge-to-edge.
 
+## Video demo
+
+[▶ Xem video demo](video/lab11_demo.mp4)
+
+Video quay trực tiếp trên emulator: chạm vào cây, đặt lời nhắc 5 giây, chờ thông báo, mở notification shade, chạm thông báo để mở lại app và kiểm tra dark mode.
+
 ## Ảnh ứng dụng
 
 | Danh sách cây | Chọn thời gian nhắc | Thông báo nhắc tưới |
