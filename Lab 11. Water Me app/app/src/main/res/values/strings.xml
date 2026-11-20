@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Water Me</string>
+    <string name="app_tagline">Never forget a watering day</string>
+
+    <!-- Intro card -->
+    <string name="intro_title">Your green friends</string>
+    <string name="intro_body">Tap a plant and pick when you want to be reminded to water it.</string>
+
+    <!-- Plant card -->
+    <string name="water">Water</string>
+    <string name="tap_to_schedule">Set a reminder</string>
+
+    <!-- Reminder dialog -->
+    <string name="remind_me">Remind me to water %1$s in…</string>
+    <string name="five_seconds">5 seconds</string>
+    <string name="one_day">1 day</string>
+    <string name="one_week">1 week</string>
+    <string name="one_month">1 month</string>
+    <string name="cancel">Cancel</string>
+    <string name="reminder_scheduled">Reminder set for %1$s in %2$s.</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Watering reminders</string>
+    <string name="notification_channel_description">Reminders to water your plants</string>
+    <string name="notification_title">Time to water!</string>
+    <string name="time_to_water">It\'s time to water your %1$s.</string>
+
+    <!-- Plants -->
+    <string name="lithop">Lithop</string>
+    <string name="carrot">Carrot</string>
+    <string name="peony">Peony</string>
+    <string name="pothos">Pothos</string>
+    <string name="fiddle_leaf_fig">Fiddle Leaf Fig</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="daily">daily</string>
+    <string name="weekly">weekly</string>
+    <string name="monthly">monthly</string>
+    <string name="succulent">Succulent</string>
+    <string name="root">Root</string>
+    <string name="flower">Flower</string>
+    <string name="houseplant">Houseplant</string>
+    <string name="broadleaf_evergreen">Broadleaf evergreen</string>
+    <string name="fruit">Fruit</string>
+    <string name="stone_mimicking_succulent">Stone mimicking succulent</string>
+    <string name="hardy_root_vegetable">Hardy root vegetable</string>
+    <string name="spring_blooming_flower">Spring blooming flower</string>
+    <string name="indoor_vine">Indoor vine</string>
+    <string name="ornamental_fig">Ornamental fig</string>
+    <string name="delicious_multiple_fruit">Delicious multiple fruit</string>
+</resources>

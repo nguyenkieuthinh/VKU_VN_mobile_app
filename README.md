@@ -12,7 +12,7 @@
 
 ---
 
-> Tổng hợp 10 ứng dụng Android được xây dựng bằng **Kotlin** và **Jetpack Compose**, từ giao diện cơ bản đến quản lý trạng thái, điều hướng, Cloud Firestore, Firebase Authentication và tải ảnh từ Internet. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
+> Tổng hợp 10 ứng dụng Android được xây dựng bằng **Kotlin** và **Jetpack Compose**, từ giao diện cơ bản đến quản lý trạng thái, điều hướng, Cloud Firestore, Firebase Authentication, tải ảnh từ Internet và công việc nền với WorkManager. *(Lab 1 là bài làm quen công cụ, không có mã nguồn ứng dụng.)*
 
 ## Danh sách bài thực hành
 
@@ -27,6 +27,7 @@
 | 8 | Pizzeria | Firebase Authentication: đăng ký / đăng nhập / đăng xuất bằng Email + Password | [Xem chi tiết](README_LAB_8.md) |
 | 9 | Inventory | Cloud Firestore: thêm, đọc, sửa, xóa mặt hàng | [Xem chi tiết](README_LAB_9.md) |
 | 10 | Load ảnh từ Internet | Coil, danh sách URL cập nhật từ GitHub, tối đa 20 ảnh | [Xem chi tiết](README_LAB_10.md) |
+| 11 | Water Me | WorkManager & Notification: hẹn giờ nhắc tưới cây | [Xem chi tiết](README_LAB_11.md) |
 
 ## GIF demo
 
@@ -52,10 +53,16 @@
 |:---:|:---:|
 | ![Lab 10 tải ảnh từ Internet](video/lab10_1.png) | ![Lab 10 hiển thị trạng thái khi ảnh lỗi](video/lab10_2.png) |
 
+### Lab 11 · Water Me
+
+| Danh sách cây | Chọn thời gian nhắc | Thông báo nhắc tưới |
+|:---:|:---:|:---:|
+| <img src="video/lab11_1.png" alt="Lab 11 danh sách cây" width="240"> | <img src="video/lab11_2.png" alt="Lab 11 chọn thời gian nhắc" width="240"> | <img src="video/lab11_3.png" alt="Lab 11 thông báo nhắc tưới cây" width="240"> |
+
 ---
 
 <div align="center">
 
-**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md) → [README_LAB_9.md](README_LAB_9.md) → [README_LAB_10.md](README_LAB_10.md)**
+**Bắt đầu xem từ [README_LAB_2.md](README_LAB_2.md) → [README_LAB_3.md](README_LAB_3.md) → [README_LAB_4.md](README_LAB_4.md) → [README_LAB_5.md](README_LAB_5.md) → [README_LAB_6.md](README_LAB_6.md) → [README_LAB_7.md](README_LAB_7.md) → [README_LAB_8.md](README_LAB_8.md) → [README_LAB_9.md](README_LAB_9.md) → [README_LAB_10.md](README_LAB_10.md) → [README_LAB_11.md](README_LAB_11.md)**
 
 </div>
